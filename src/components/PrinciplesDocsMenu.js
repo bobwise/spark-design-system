@@ -19,6 +19,7 @@ const PrinciplesSparkDocsMenu = () => {
                 element={Link}
                 variant="simple"
                 to={`/principles/${page.node.parent.name}`}
+                activeClassName="isActive"
               >
                 { page.node.frontmatter.title || page.node.parent.name }
               </SprkLink>

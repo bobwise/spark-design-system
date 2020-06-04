@@ -21,8 +21,10 @@ function ContextSubMenu({heading, collection, directory}) {
             <SprkLink
               element={Link}
               variant='simple'
-              to={`/using-spark/${directory}/${item.node.parent.name}`}>
-                { item.node.frontmatter.title || item.node.parent.name }
+              to={`/using-spark/${directory}/${item.node.parent.name}`}
+              activeClassName="isActive"
+            >
+              {item.node.frontmatter.title || item.node.parent.name}
             </SprkLink>
           </li>
         ))}
