@@ -13,7 +13,12 @@ class SprkMastheadAccordion extends React.Component {
   }
 
   render() {
-    const { additionalClasses, analyticsString, idString, linkSelectionFunction} = this.props;
+    const {
+      additionalClasses,
+      analyticsString,
+      idString,
+      linkSelectionFunction,
+    } = this.props;
     const { links } = this.state;
     return (
       <ul
@@ -24,8 +29,13 @@ class SprkMastheadAccordion extends React.Component {
           additionalClasses,
         )}
       >
-        {links.map(link => (
-          <SprkMastheadAccordionItem clickFunction={linkSelectionFunction} {...link} key={link.id} />
+        {links.map((link) => (
+          <SprkMastheadAccordionItem
+            clickFunction={linkSelectionFunction}
+            key={link.id}
+            itemId={link.itemId}
+            {...link}
+          />
         ))}
       </ul>
     );
@@ -60,7 +70,7 @@ SprkMastheadAccordion.propTypes = {
       element: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.func,
-        PropTypes.elementType
+        PropTypes.elementType,
       ]),
       /**
        * When the link is rendered to a compatible element
@@ -73,6 +83,11 @@ SprkMastheadAccordion.propTypes = {
        */
       text: PropTypes.string,
       /**
+       * Determines if the active styles
+       * are applied to the link.
+       */
+      isActive: PropTypes.bool,
+      /**
        * Expects an array containing link objects.
        *  Will be treated as a subnav to the link.
        */
@@ -84,7 +99,7 @@ SprkMastheadAccordion.propTypes = {
           element: PropTypes.oneOfType([
             PropTypes.string,
             PropTypes.func,
-            PropTypes.elementType
+            PropTypes.elementType,
           ]),
           /**
            * When the link is rendered to a compatible element

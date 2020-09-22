@@ -28,13 +28,13 @@ import {
             type="button"
             [attr.aria-expanded]="isNarrowNavOpen ? true : false"
             (click)="toggleNarrowNav($event)"
-            data-sprk-mobile-nav-trigger="mobileNav"
+            [attr.aria-controls]="narrowNavId"
           >
             <span class="sprk-u-ScreenReaderText">Toggle Navigation</span>
             <svg
               [ngClass]="{
                 'sprk-c-Icon': true,
-                'sprk-c-Icon--l': true,
+                'sprk-c-Icon--xl': true,
                 'sprk-c-Menu__icon': true,
                 'sprk-c-Menu__icon--open': isNarrowNavOpen
               }"
@@ -115,7 +115,7 @@ import {
               <div *ngIf="link.subNav">
                 <sprk-dropdown
                   [choices]="link.subNav"
-                  additionalTriggerClasses="sprk-b-Link--plain sprk-c-Masthead__link sprk-c-Masthead__link--big-nav"
+                  additionalTriggerClasses="sprk-b-Link--simple sprk-c-Masthead__link sprk-c-Masthead__link--big-nav"
                   additionalClasses="sprk-u-TextAlign--left"
                   triggerIconType="chevron-down"
                   [analyticsString]="link.analyticsString"
@@ -125,7 +125,7 @@ import {
               <div *ngIf="!link.subNav">
                 <a
                   sprkLink
-                  variant="plain"
+                  variant="simple"
                   [analyticsString]="link.analyticsString"
                   class="sprk-c-Masthead__link sprk-c-Masthead__link--big-nav"
                   [attr.href]="link.href"
@@ -141,8 +141,8 @@ import {
       <nav
         *ngIf="isNarrowNavOpen"
         class="sprk-c-Masthead__narrow-nav"
-        data-sprk-mobile-nav="mobileNav"
         role="navigation"
+        [id]="narrowNavId"
       >
         <sprk-dropdown
           *ngIf="narrowSelector"
@@ -205,7 +205,12 @@ import {
                     >
                       <sprk-icon
                         [iconType]="subNavLink.leadingIcon"
-                        additionalClasses="sprk-c-Icon--stroke-current-color sprk-u-mrs"
+                        additionalClasses="
+                          sprk-c-Icon--filled-current-color
+                          sprk-c-Icon--stroke-current-color
+                          sprk-c-Icon--xl
+                          sprk-u-mrs
+                        "
                         *ngIf="subNavLink.leadingIcon"
                       ></sprk-icon>
                       {{ subNavLink.text }}
@@ -231,7 +236,12 @@ import {
                   <span class="sprk-c-MastheadAccordion__heading">
                     <sprk-icon
                       [iconType]="narrowLink.leadingIcon"
-                      additionalClasses="sprk-c-Icon--stroke-current-color sprk-u-mrs"
+                      additionalClasses="
+                        sprk-c-Icon--filled-current-color
+                        sprk-c-Icon--stroke-current-color
+                        sprk-c-Icon--xl
+                        sprk-u-mrs
+                      "
                       *ngIf="narrowLink.leadingIcon"
                     ></sprk-icon>
                     {{ narrowLink.text }}
@@ -293,8 +303,8 @@ export class SprkMastheadComponent implements AfterContentInit {
   additionalNarrowNavClasses: string;
   /**
    * Expects an array of
-   * [ISprkNarrowNavLink](https://github.com/sparkdesignsystem/spark-design-system/tree/master/src/angular/projects/spark-angular/src/lib/components/sprk-masthead/sprk-masthead.interfaces.ts)
-   * to be
+   * [ISprkNarrowNavLink](https://github.com/sparkdesignsystem/spark-design-system/blob/master/angular/projects/spark-angular/src/lib/components/sprk-masthead/sprk-masthead.interfaces.ts)
+   *  to be
    * represented in the narrow nav element
    * of the Masthead component.
    */
@@ -318,21 +328,27 @@ export class SprkMastheadComponent implements AfterContentInit {
   idString: string;
   /**
    * Expects an array of
-   * [ISprkBigNavLink](https://github.com/sparkdesignsystem/spark-design-system/tree/master/src/angular/projects/spark-angular/src/lib/components/sprk-masthead/sprk-masthead.interfaces.ts)
-   * to be
+   * [ISprkBigNavLink](https://github.com/sparkdesignsystem/spark-design-system/blob/master/angular/projects/spark-angular/src/lib/components/sprk-masthead/sprk-masthead.interfaces.ts)
+   *  to be
    * used to create the Big Navigation of
    * the Masthead component.
    */
   @Input()
   bigNavLinks: ISprkBigNavLink[];
   /**
-   * Expects a [ISprkNarrowSelector](https://github.com/sparkdesignsystem/spark-design-system/tree/master/src/angular/projects/spark-angular/src/lib/components/sprk-masthead/sprk-masthead.interfaces.ts)
-   * object that
+   * Expects a [ISprkNarrowSelector](https://github.com/sparkdesignsystem/spark-design-system/blob/master/angular/projects/spark-angular/src/lib/components/sprk-masthead/sprk-masthead.interfaces.ts)
+   *  object that
    * represents dropdown choices inside the dropdown
    * rendered in the Narrow Navigation.
    */
   @Input()
   narrowSelector: ISprkNarrowSelector;
+  /**
+   * A string that is used to set the `id` on the narrow nav
+   * and the `aria-controls` for the menu trigger button.
+   */
+  @Input()
+  narrowNavId = _.uniqueId(`sprk_masthead_narrow_nav_`);
 
   /**
    * @ignore
@@ -437,7 +453,7 @@ export class SprkMastheadComponent implements AfterContentInit {
    * @ignore
    */
   isElementVisible(selector) {
-    if (typeof window === undefined) { return; }
+    if (typeof window === 'undefined') { return; }
     const element = document.querySelector(selector);
     if (!element) {
       return;
@@ -588,5 +604,3 @@ export class SprkMastheadComponent implements AfterContentInit {
     this.isNarrowNavOpen = false;
   }
 }
-
-

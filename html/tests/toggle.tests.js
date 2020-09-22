@@ -65,12 +65,7 @@ describe('Toggle tests', () => {
     trigger.setAttribute('aria-controls', 'toggle-1');
     trigger.textContent = 'My Toggle Link Text';
     trigger.classList.add(
-      'sprk-b-TypeBodyThree',
-      'sprk-u-BareButton',
-      'sprk-u-TextCrop--none',
-      'sprk-b-Link',
-      'sprk-b-Link--has-icon',
-      'sprk-b-Link--simple',
+      'sprk-c-Toggle__trigger',
     );
 
     triggerAccordion = document.createElement('a');
@@ -124,6 +119,17 @@ describe('Toggle tests', () => {
     triggerAccordion.append(iconAccordion);
     containerAccordion.append(triggerAccordion);
     containerAccordion.append(contentAccordion);
+    document.body.appendChild(container);
+  });
+
+  it('should apply focus-visible class to trigger when focused', () => {
+    trigger.focus();
+    expect(trigger.classList.contains('focus-visible')).toBe(true);
+  });
+
+  it('should not apply focus-visible class to trigger when clicked', () => {
+    trigger.click();
+    expect(trigger.classList.contains('focus-visible')).toBe(false);
   });
 
   it('should toggle aria-expanded attribute for toggles', () => {
@@ -153,7 +159,7 @@ describe('Toggle tests', () => {
     );
     expect(containerAccordion.classList
       .contains('sprk-c-Accordion__item--open')).toBe(true);
-    expect(iconAccordionUseElement.getAttribute('xlink:href')).toBe('#chevron-up-circle-two-color');
+    expect(iconAccordionUseElement.getAttribute('xlink:href')).toBe('#chevron-up-circle');
   });
 
   it('should toggle accordion open', () => {
@@ -168,17 +174,17 @@ describe('Toggle tests', () => {
     expect(containerAccordion.classList
       .contains('sprk-c-MastheadAccordion__item--open')).toBe(true);
     expect(iconAccordionUseElement
-      .getAttribute('xlink:href')).toBe('#chevron-up-circle-two-color');
+      .getAttribute('xlink:href')).toBe('#chevron-up-circle');
   });
 
   it('should toggle accordion icon open', () => {
     toggleIconType(
       iconAccordion,
       iconAccordionUseElement,
-      'chevron-up-circle-two-color',
-      'chevron-down-circle-two-color',
+      'chevron-up-circle',
+      'chevron-down-circle',
     );
-    expect(iconAccordionUseElement.getAttribute('xlink:href')).toBe('#chevron-down-circle-two-color');
+    expect(iconAccordionUseElement.getAttribute('xlink:href')).toBe('#chevron-down-circle');
   });
 
   it('should add listener to toggle trigger', () => {

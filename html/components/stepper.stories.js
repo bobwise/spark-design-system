@@ -140,7 +140,7 @@ export const withStepDescriptions = () => {
   <ol
     class="sprk-c-Stepper"
     data-sprk-stepper="container"
-    data-id="stepper-1"
+    data-id="stepper-descriptions-1"
     role="tablist"
     aria-orientation="vertical"
   >
@@ -154,8 +154,8 @@ export const withStepDescriptions = () => {
       >
         <span
           class="sprk-c-Stepper__step-header sprk-b-Link sprk-b-Link--plain"
-          aria-controls="one-target-1"
-          id="one-step-1"
+          aria-controls="one-descriptions-target-1"
+          id="step-descriptions-1"
           aria-selected="true"
         >
           <span class="sprk-c-Stepper__step-icon"></span>
@@ -167,8 +167,8 @@ export const withStepDescriptions = () => {
         <div
           class="sprk-c-Stepper__step-description"
           data-sprk-stepper="description"
-          id="one-target-1"
-          aria-labelledby="one-step-1"
+          id="one-descriptions-target-1"
+          aria-labelledby="step-descriptions-1"
           role="tabpanel"
         >
           <p class="sprk-b-TypeBodyTwo">
@@ -188,8 +188,8 @@ export const withStepDescriptions = () => {
       >
         <span
           class="sprk-c-Stepper__step-header sprk-b-Link sprk-b-Link--plain"
-          aria-controls="one-target-2"
-          id="one-step-2"
+          aria-controls="one-descriptions-target-2"
+          id="one-step-descriptions-2"
         >
           <span class="sprk-c-Stepper__step-icon"></span>
           <h3 class="sprk-c-Stepper__step-heading" data-sprk-stepper="heading">
@@ -200,8 +200,8 @@ export const withStepDescriptions = () => {
         <div
           class="sprk-c-Stepper__step-description sprk-u-HideWhenJs"
           data-sprk-stepper="description"
-          aria-labelledby="one-step-2"
-          id="one-target-2"
+          aria-labelledby="one-step-descriptions-2"
+          id="one-descriptions-target-2"
           role="tabpanel"
         >
           <p class="sprk-b-TypeBodyTwo">
@@ -221,8 +221,8 @@ export const withStepDescriptions = () => {
       >
         <span
           class="sprk-c-Stepper__step-header sprk-b-Link sprk-b-Link--plain"
-          aria-controls="one-target-3"
-          id="one-step-3"
+          aria-controls="one-descriptions-target-3"
+          id="one-step-descriptions-3"
         >
           <span class="sprk-c-Stepper__step-icon"></span>
           <h3 class="sprk-c-Stepper__step-heading" data-sprk-stepper="heading">
@@ -233,8 +233,8 @@ export const withStepDescriptions = () => {
         <div
           class="sprk-c-Stepper__step-description sprk-u-HideWhenJs"
           data-sprk-stepper="description"
-          aria-labelledby="one-step-3"
-          ids="one-target-3"
+          aria-labelledby="one-step-descriptions-3"
+          id="one-descriptions-target-3"
           role="tabpanel"
         >
           <p class="sprk-b-TypeBodyTwo">
@@ -254,8 +254,8 @@ export const withStepDescriptions = () => {
       >
         <span
           class="sprk-c-Stepper__step-header sprk-b-Link sprk-b-Link--plain"
-          aria-controls="one-target-4"
-          id="one-step-4"
+          aria-controls="one-descriptions-target-4"
+          id="one-step-descriptions-4"
         >
           <span class="sprk-c-Stepper__step-icon"></span>
           <h3 class="sprk-c-Stepper__step-heading" data-sprk-stepper="heading">
@@ -266,8 +266,8 @@ export const withStepDescriptions = () => {
         <div
           class="sprk-c-Stepper__step-description sprk-u-HideWhenJs"
           data-sprk-stepper="description"
-          aria-labelledby="one-step-4"
-          id="one-target-4"
+          aria-labelledby="one-step-descriptions-4"
+          id="one-descriptions-target-4"
           role="tabpanel"
         >
           <p class="sprk-b-TypeBodyTwo">
@@ -293,11 +293,11 @@ export const withDarkBackground = () => {
   }, []);
 
   return `
-  <div class="sprk-u-BackgroundColor--blue sprk-o-Box sprk-o-Box--large">
+  <div class="sprk-u-BackgroundColor--purple-dark sprk-o-Box sprk-o-Box--large">
     <ol
       class="sprk-c-Stepper sprk-c-Stepper--has-dark-bg "
       data-sprk-stepper="container"
-      data-id="stepper-1"
+      data-id="stepper-dark-1"
       role="tablist"
       aria-orientation="vertical"
     >
@@ -310,8 +310,8 @@ export const withDarkBackground = () => {
         <div class="sprk-c-Stepper__step-content sprk-c-Stepper__step-content--has-description">
           <span
             class="sprk-c-Stepper__step-header sprk-b-Link sprk-b-Link--plain"
-            aria-controls="target-1"
-            id="step-1"
+            aria-controls="background-target-1"
+            id="step-background-1"
           >
             <span class="sprk-c-Stepper__step-icon"></span>
             <h3 class="sprk-c-Stepper__step-heading" data-sprk-stepper="heading">
@@ -322,8 +322,8 @@ export const withDarkBackground = () => {
           <div
             class="sprk-c-Stepper__step-description"
             data-sprk-stepper="description"
-            id="target-1"
-            aria-labelledby="step-1"
+            id="background-target-1"
+            aria-labelledby="step-background-1"
             role="tabpanel"
           >
             <p class="sprk-b-TypeBodyTwo">
@@ -341,8 +341,8 @@ export const withDarkBackground = () => {
         <div class="sprk-c-Stepper__step-content sprk-c-Stepper__step-content--has-description">
           <span
             class="sprk-c-Stepper__step-header sprk-b-Link sprk-b-Link--plain"
-            aria-controls="target-2"
-            id="step-2"
+            aria-controls="background-target-2"
+            id="step-background-2"
           >
             <span class="sprk-c-Stepper__step-icon"></span>
             <h3 class="sprk-c-Stepper__step-heading" data-sprk-stepper="heading">
@@ -353,8 +353,8 @@ export const withDarkBackground = () => {
           <div
             class="sprk-c-Stepper__step-description sprk-u-HideWhenJs"
             data-sprk-stepper="description"
-            aria-labelledby="step-2"
-            id="target-2"
+            aria-labelledby="step-background-2"
+            id="background-target-2"
             role="tabpanel"
           >
             <p class="sprk-b-TypeBodyTwo">
@@ -372,8 +372,8 @@ export const withDarkBackground = () => {
         <div class="sprk-c-Stepper__step-content sprk-c-Stepper__step-content--has-description">
           <span
             class="sprk-c-Stepper__step-header sprk-b-Link sprk-b-Link--plain"
-            aria-controls="target-3"
-            id="step-3"
+            aria-controls="background-target-3"
+            id="step-background-3"
           >
             <span class="sprk-c-Stepper__step-icon"></span>
             <h3 class="sprk-c-Stepper__step-heading" data-sprk-stepper="heading">
@@ -384,8 +384,8 @@ export const withDarkBackground = () => {
           <div
             class="sprk-c-Stepper__step-description sprk-u-HideWhenJs"
             data-sprk-stepper="description"
-            aria-labelledby="step-3"
-            id="target-3"
+            aria-labelledby="step-background-3"
+            id="background-target-3"
             role="tabpanel"
           >
             <p class="sprk-b-TypeBodyTwo">
@@ -403,8 +403,8 @@ export const withDarkBackground = () => {
         <div class="sprk-c-Stepper__step-content sprk-c-Stepper__step-content--has-description">
           <span
             class="sprk-c-Stepper__step-header sprk-b-Link sprk-b-Link--plain"
-            aria-controls="target-4"
-            id="step-4"
+            aria-controls="background-target-4"
+            id="step-background-4"
           >
             <span class="sprk-c-Stepper__step-icon"></span>
             <h3 class="sprk-c-Stepper__step-heading" data-sprk-stepper="heading">
@@ -415,8 +415,8 @@ export const withDarkBackground = () => {
           <div
             class="sprk-c-Stepper__step-description sprk-u-HideWhenJs"
             data-sprk-stepper="description"
-            aria-labelledby="step-4"
-            id="target-4"
+            aria-labelledby="step-background-4"
+            id="background-target-4"
             role="tabpanel"
           >
             <p class="sprk-b-TypeBodyTwo">
@@ -464,11 +464,11 @@ export const withCarousel = () => {
   }, []);
 
   return `
-  <div class="sprk-u-BackgroundColor--blue sprk-o-Box sprk-o-Box--large">
+  <div class="sprk-u-BackgroundColor--purple-dark sprk-o-Box sprk-o-Box--large">
     <div class="sprk-o-CenteredColumn sprk-o-Stack sprk-o-Stack--medium sprk-o-Stack--center-column sprk-o-Stack--split-reverse@xl">
       <div class="sprk-o-Stack__item sprk-o-Stack__item--flex@xl">
         <div
-          class="sprk-c-Carousel"
+          class="sprk-c-Carousel sprk-c-Carousel--has-dark-bg"
           data-sprk-carousel="stepper-carousel-01"
         >
           <div class="sprk-c-Carousel__controls sprk-o-Stack sprk-o-Stack--split@xxs sprk-o-Stack--center-row sprk-o-Stack--center-column">
@@ -476,7 +476,7 @@ export const withCarousel = () => {
             <button class="sprk-o-Stack__item sprk-c-Carousel__prev">
               <span class="sprk-u-ScreenReaderText">Previous Slide</span>
               <svg
-                class="sprk-c-Icon sprk-c-Icon--stroke-current-color sprk-c-Icon--l"
+                class="sprk-c-Icon sprk-c-Icon--filled-current-color sprk-c-Icon--xl"
                 viewBox="0 0 100 100"
               >
                 <use xlink:href="#chevron-left" />
@@ -486,16 +486,16 @@ export const withCarousel = () => {
             <div class="sprk-c-Carousel__frame">
               <ul class="sprk-c-Carousel__slides">
                 <li class="sprk-c-Carousel__frame-item">
-                  <img src="https://spark-assets.netlify.com/phone-shadow.png" alt="Cell phone with a blank screen.">
+                  <img src="https://spark-assets.netlify.app/phone-shadow.png" alt="Cell phone with a blank screen.">
                 </li>
                 <li class="sprk-c-Carousel__frame-item">
-                  <img src="https://spark-assets.netlify.com/phone-shadow.png" alt="Cell phone with a blank screen.">
+                  <img src="https://spark-assets.netlify.app/phone-shadow.png" alt="Cell phone with a blank screen.">
                 </li>
                 <li class="sprk-c-Carousel__frame-item">
-                  <img src="https://spark-assets.netlify.com/phone-shadow.png" alt="Cell phone with a blank screen.">
+                  <img src="https://spark-assets.netlify.app/phone-shadow.png" alt="Cell phone with a blank screen.">
                 </li>
                 <li class="sprk-c-Carousel__frame-item">
-                  <img src="https://spark-assets.netlify.com/phone-shadow.png" alt="Cell phone with a blank screen.">
+                  <img src="https://spark-assets.netlify.app/phone-shadow.png" alt="Cell phone with a blank screen.">
                 </li>
               </ul>
               <div
@@ -507,7 +507,7 @@ export const withCarousel = () => {
             <button class="sprk-o-Stack__item sprk-c-Carousel__next">
               <span class="sprk-u-ScreenReaderText">Next Slide</span>
               <svg
-                class="sprk-c-Icon sprk-c-Icon--stroke-current-color sprk-c-Icon--l"
+                class="sprk-c-Icon sprk-c-Icon--filled-current-color sprk-c-Icon--xl"
                 viewBox="0 0 100 100"
               >
                 <use xlink:href="#chevron-right" />
@@ -523,7 +523,7 @@ export const withCarousel = () => {
           class="sprk-c-Stepper sprk-c-Stepper--has-dark-bg sprk-c-Stepper--has-carousel"
           data-sprk-stepper="container"
           data-sprk-stepper-carousel="stepper-carousel-01"
-          data-id="stepper-1"
+          data-id="stepper-carousel-1"
           role="tablist"
           aria-orientation="vertical"
         >

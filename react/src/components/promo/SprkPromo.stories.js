@@ -4,9 +4,7 @@ import { markdownDocumentationLinkBuilder } from '../../../../storybook-utilitie
 
 export default {
   title: 'Components/Promo',
-  decorators: [
-    story => <div className="sprk-o-Box">{story()}</div>
-  ],
+  decorators: [(story) => <div className="sprk-o-Box">{story()}</div>],
   component: SprkPromo,
   parameters: {
     jest: ['SprkPromo'],
@@ -27,8 +25,9 @@ export const defaultStory = () => (
     hasBorder
     idString="promo-1"
   >
-    Lorem ipsum dolor. Sit amet pede. Tempus donec et. Suspendisse id inventore integer eum non enim
-    diam habitant. Maecenas nunc per lacus neque egestas. Diam quod curabitur.
+    Lorem ipsum dolor. Sit amet pede. Tempus donec et. Suspendisse id inventore
+    integer eum non enim diam habitant. Maecenas nunc per lacus neque egestas.
+    Diam quod curabitur.
   </SprkPromo>
 );
 
@@ -39,7 +38,7 @@ defaultStory.story = {
 export const flag = () => (
   <SprkPromo
     additionalClasses="sprk-o-Stack--split@s"
-    imgSrc="https://spark-assets.netlify.com/spark-logo-updated.svg"
+    imgSrc="https://spark-assets.netlify.app/spark-logo-updated.svg"
     imgAlt="Spark Design System Logo"
     imgLinkHref="#nogo"
     imgLinkAnalytics="promo-3-img-link-analytics"
@@ -48,8 +47,9 @@ export const flag = () => (
     isFlag
     hasBorder
   >
-    Lorem ipsum dolor. Sit amet pede. Tempus donec et. Suspendisse id inventore integer eum non enim
-    diam habitant. Maecenas nunc per lacus neque egestas. Diam quod curabitur.
+    Lorem ipsum dolor. Sit amet pede. Tempus donec et. Suspendisse id inventore
+    integer eum non enim diam habitant. Maecenas nunc per lacus neque egestas.
+    Diam quod curabitur.
   </SprkPromo>
 );
 
@@ -68,14 +68,15 @@ export const withImage = () => (
     ctaAnalytics="promo-cta-5-analytics"
     ctaIdString="promo-cta-5"
     imgAlt="placeholder"
-    imgSrc="https://spark-assets.netlify.com/house.jpg"
+    imgSrc="https://spark-assets.netlify.app/house.jpg"
     imgLinkAnalytics="promo-5-img-link-analytics"
     imgLinkIdString="promo-5-img-link"
     idString="promo-5"
     hasBorder
   >
-    Lorem ipsum dolor. Sit amet pede. Tempus donec et. Suspendisse id inventore integer eum non enim
-    diam habitant. Maecenas nunc per lacus neque egestas. Diam quod curabitur.
+    Lorem ipsum dolor. Sit amet pede. Tempus donec et. Suspendisse id inventore
+    integer eum non enim diam habitant. Maecenas nunc per lacus neque egestas.
+    Diam quod curabitur.
   </SprkPromo>
 );
 
@@ -94,7 +95,7 @@ export const withReversedImage = () => (
     ctaAnalytics="promo-cta-6-analytics"
     ctaIdString="promo-cta-6"
     imgAlt="placeholder"
-    imgSrc="https://spark-assets.netlify.com/house.jpg"
+    imgSrc="https://spark-assets.netlify.app/house.jpg"
     imgLinkHref="https://sparkdesignsystem.com"
     imgLinkAnalytics="promo-6-img-link-analytics"
     imgLinkIdString="promo-6-img-link"
@@ -102,8 +103,9 @@ export const withReversedImage = () => (
     mediaRev
     hasBorder
   >
-    Lorem ipsum dolor. Sit amet pede. Tempus donec et. Suspendisse id inventore integer eum non enim
-    diam habitant. Maecenas nunc per lacus neque egestas. Diam quod curabitur.
+    Lorem ipsum dolor. Sit amet pede. Tempus donec et. Suspendisse id inventore
+    integer eum non enim diam habitant. Maecenas nunc per lacus neque egestas.
+    Diam quod curabitur.
   </SprkPromo>
 );
 

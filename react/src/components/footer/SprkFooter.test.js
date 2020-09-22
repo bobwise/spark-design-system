@@ -13,7 +13,7 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('SprkFooter:', () => {
   it('should display a Footer element with the correct base class', () => {
     const wrapper = mount(<SprkFooter />);
-    expect(wrapper.find('.sprk-o-Box.sprk-o-Box--large.sprk-u-BackgroundColor--gray').length).toBe(
+    expect(wrapper.find('.sprk-o-Box.sprk-o-Box--large.sprk-c-Footer').length).toBe(
       1,
     );
   });
@@ -24,7 +24,7 @@ describe('SprkFooter:', () => {
       items: [
         {
           mediaType: 'image',
-          src: 'https://spark-assets.netlify.com/spark-logo.svg',
+          src: 'https://spark-assets.netlify.app/spark-logo.svg',
           altText: 'Spark Logo',
           description: 'Lorem ipsum dolor sit amet, consectetur.',
         },
@@ -87,12 +87,12 @@ describe('SprkFooter:', () => {
       images: [
         {
           href: '#nogo',
-          src: 'https://spark-assets.netlify.com/spark-logo.svg',
+          src: 'https://spark-assets.netlify.app/spark-logo.svg',
           altText: 'Spark Logo',
         },
         {
           href: '#nogo',
-          src: 'https://spark-assets.netlify.com/spark-logo.svg',
+          src: 'https://spark-assets.netlify.app/spark-logo.svg',
           altText: 'Spark Logo',
         },
       ],

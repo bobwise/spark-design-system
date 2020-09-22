@@ -13,6 +13,7 @@ import { requiredSelect } from './base/inputs/requiredSelect';
 import { pagination } from './components/pagination';
 import { tabs } from './components/tabs';
 import { toggle } from './components/toggle';
+import { tooltip } from './components/tooltip';
 import { spinners } from './components/spinners';
 import { masthead } from './components/masthead';
 import { alerts } from './components/alerts';
@@ -20,6 +21,8 @@ import { dropdowns } from './components/dropdown';
 import { stepper } from './components/stepper';
 import { highlightBoard } from './components/highlight-board';
 import versionCheck from './utilities/versionCheck';
+import { checkbox } from './base/inputs/checkbox';
+import { radioInput } from './base/inputs/radioInput';
 
 const Spark = ({ datePickerConfig = {} } = {}) => {
   requiredSelect();
@@ -35,6 +38,7 @@ const Spark = ({ datePickerConfig = {} } = {}) => {
   pagination();
   tabs();
   toggle();
+  tooltip();
   spinners();
   masthead();
   alerts();
@@ -43,6 +47,8 @@ const Spark = ({ datePickerConfig = {} } = {}) => {
   highlightBoard();
   hugeInput();
   versionCheck();
+  checkbox();
+  radioInput();
 };
 
 export { Spark as default };

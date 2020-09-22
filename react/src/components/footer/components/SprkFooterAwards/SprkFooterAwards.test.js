@@ -13,13 +13,13 @@ describe('SprkFooterAwards:', () => {
       images: [
         {
           href: '#nogo',
-          src: 'https://spark-assets.netlify.com/spark-logo.svg',
+          src: 'https://spark-assets.netlify.app/spark-logo.svg',
           altText: 'Spark Logo',
           addClasses: 'drizzle-c-Logo',
         },
         {
           href: '#nogo',
-          src: 'https://spark-assets.netlify.com/spark-logo.svg',
+          src: 'https://spark-assets.netlify.app/spark-logo.svg',
           altText: 'Spark Logo',
           addClasses: 'drizzle-c-Logo',
         },
@@ -39,14 +39,14 @@ describe('SprkFooterAwards:', () => {
       images: [
         {
           href: '#nogo',
-          src: 'https://spark-assets.netlify.com/spark-logo.svg',
+          src: 'https://spark-assets.netlify.app/spark-logo.svg',
           altText: 'Spark Logo',
           addClasses: 'drizzle-c-Logo',
           element: 'a',
         },
         {
           href: '#nogo',
-          src: 'https://spark-assets.netlify.com/spark-logo.svg',
+          src: 'https://spark-assets.netlify.app/spark-logo.svg',
           altText: 'Spark Logo',
           addClasses: 'drizzle-c-Logo',
           element: 'a',
@@ -58,7 +58,8 @@ describe('SprkFooterAwards:', () => {
     };
 
     const wrapper = mount(<SprkFooterAwards awards={awards} />);
-    expect(wrapper.find('a').length).toBe(3);
+    expect(wrapper.find('a').length).toBe(2);
+    expect(wrapper.find('button').length).toBe(1);
   });
 
   it('should render the href as nogo if not defined', () => {
@@ -66,13 +67,13 @@ describe('SprkFooterAwards:', () => {
       heading: 'Awards Heading Title',
       images: [
         {
-          src: 'https://spark-assets.netlify.com/spark-logo.svg',
+          src: 'https://spark-assets.netlify.app/spark-logo.svg',
           altText: 'Spark Logo',
           analyticsString: 'test-link',
           element: 'a',
         },
         {
-          src: 'https://spark-assets.netlify.com/spark-logo.svg',
+          src: 'https://spark-assets.netlify.app/spark-logo.svg',
           altText: 'Spark Logo',
           addClasses: 'drizzle-c-Logo',
           element: 'a',
@@ -97,13 +98,13 @@ describe('SprkFooterAwards:', () => {
       heading: 'Awards Heading Title',
       images: [
         {
-          src: 'https://spark-assets.netlify.com/spark-logo.svg',
+          src: 'https://spark-assets.netlify.app/spark-logo.svg',
           altText: 'Spark Logo',
           analyticsString: 'test-link',
           element: 'span',
         },
         {
-          src: 'https://spark-assets.netlify.com/spark-logo.svg',
+          src: 'https://spark-assets.netlify.app/spark-logo.svg',
           altText: 'Spark Logo',
           addClasses: 'drizzle-c-Logo',
           element: 'a',

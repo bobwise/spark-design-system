@@ -93,19 +93,18 @@ export const invalidPercentageInput = () => ({
       <sprk-icon
         iconType="percent"
         additionalClasses="sprk-b-InputContainer__icon sprk-b-InputContainer__icon--right"
-        class="sprk-b-TextInput--error"
         aria-invalid="true"
         sprk-input-icon
       ></sprk-icon>
       <input
-        class="sprk-b-InputContainer__input--has-icon-right"
+        class="sprk-b-InputContainer__input--has-icon-right sprk-b-TextInput--error"
         name="percentage"
         type="tel"
         sprkInput
       />
       <span sprkFieldError>
         <sprk-icon
-          iconType="exclamation-filled-small"
+          iconType="exclamation-filled"
           additionalClasses="sprk-b-ErrorIcon"
         ></sprk-icon>
         <div class="sprk-b-ErrorText">There is an error on this field.</div>

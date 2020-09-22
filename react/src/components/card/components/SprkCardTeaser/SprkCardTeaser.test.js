@@ -23,7 +23,7 @@ const createTestObjects = () => {
     mediaLinkElement: 'a',
     iconName: '',
     imgAlt: '',
-    imgSrc: 'https://spark-assets.netlify.com/desktop.jpg',
+    imgSrc: 'https://spark-assets.netlify.app/desktop.jpg',
     mediaAnalyticsString: '',
     mediaVariant: 'img',
   };
@@ -58,6 +58,28 @@ describe('SprkCardTeaser:', () => {
     const wrapper = mount(<SprkCardTeaser teaserConfig={testTeaserConfig} />);
     const hasMediaImg = wrapper.find('SprkIcon').length === 1;
     expect(hasMediaImg).toBe(true);
+  });
+
+  it('should default mediaLinkElement to an anchor if not provided', () => {
+    testTeaserConfig.media.mediaVariant = 'icon';
+    testTeaserConfig.media.mediaLinkElement = undefined;
+    const wrapper = mount(<SprkCardTeaser teaserConfig={testTeaserConfig} />);
+    const hasMediaImg = wrapper.find('Media a').length === 1;
+    expect(hasMediaImg).toBe(true);
+  });
+
+  it('should apply the correct classes if mediaVariant is icon', () => {
+    testTeaserConfig.media.mediaVariant = 'icon';
+    testTeaserConfig.media.iconName = 'bell';
+    const wrapper = mount(<SprkCardTeaser teaserConfig={testTeaserConfig} />);
+    expect(
+      wrapper
+        .find('.sprk-c-Card__content')
+        .hasClass('sprk-u-TextAlign--center'),
+    ).toBe(true);
+    expect(wrapper.find('Media a').hasClass('sprk-u-AbsoluteCenter')).toBe(
+      true,
+    );
   });
 
   // Body Text
@@ -112,6 +134,33 @@ describe('SprkCardTeaser:', () => {
     expect(hasButtonCta).toBe(true);
   });
 
+  it('should have the correct class if CTA is secondary', () => {
+    testTeaserConfig.cta.ctaVariant = 'button';
+    testTeaserConfig.cta.buttonVariant = 'secondary';
+    const wrapper = mount(<SprkCardTeaser teaserConfig={testTeaserConfig} />);
+    expect(
+      wrapper.find('.sprk-c-Button').hasClass('sprk-c-Button--secondary'),
+    ).toBe(true);
+  });
+
+  it('should have the correct class if CTA is tertiary', () => {
+    testTeaserConfig.cta.ctaVariant = 'button';
+    testTeaserConfig.cta.buttonVariant = 'tertiary';
+    const wrapper = mount(<SprkCardTeaser teaserConfig={testTeaserConfig} />);
+    expect(
+      wrapper.find('.sprk-c-Button').hasClass('sprk-c-Button--tertiary'),
+    ).toBe(true);
+  });
+
+  it('should have the correct class if CTA is quaternary', () => {
+    testTeaserConfig.cta.ctaVariant = 'button';
+    testTeaserConfig.cta.buttonVariant = 'quaternary';
+    const wrapper = mount(<SprkCardTeaser teaserConfig={testTeaserConfig} />);
+    expect(
+      wrapper.find('.sprk-c-Button').hasClass('sprk-c-Button--quaternary'),
+    ).toBe(true);
+  });
+
   // TagNameLink
   it('should render media img inside react router link', () => {
     testTeaserConfig.media.mediaVariant = 'img';
@@ -164,7 +213,8 @@ describe('SprkCardTeaser:', () => {
         <SprkCardTeaser teaserConfig={testTeaserConfig} />
       </Router>,
     );
-    const hasRouterLink = wrapper.find('CallToAction Link SprkIcon').length === 1;
+    const hasRouterLink =
+      wrapper.find('CallToAction Link SprkIcon').length === 1;
     expect(hasRouterLink).toBe(true);
   });
 
@@ -177,7 +227,8 @@ describe('SprkCardTeaser:', () => {
         <SprkCardTeaser teaserConfig={testTeaserConfig} />
       </Router>,
     );
-    const hasRouterLink = wrapper.find('CallToAction Link.sprk-c-Button').length === 1;
+    const hasRouterLink =
+      wrapper.find('CallToAction Link.sprk-c-Button').length === 1;
     expect(hasRouterLink).toBe(true);
   });
 
@@ -204,23 +255,26 @@ describe('SprkCardTeaser:', () => {
     testTeaserConfig.titleFirst = true;
     testTeaserConfig.media.mediaVariant = 'img';
     const wrapper = mount(<SprkCardTeaser teaserConfig={testTeaserConfig} />);
-    const hasCorrectOrder = wrapper.find('Title + Media + div.sprk-c-Card__content').length === 1;
+    const hasCorrectOrder =
+      wrapper.find('Title + Media + div.sprk-c-Card__content').length === 1;
     expect(hasCorrectOrder).toBe(true);
   });
 
   it('should render correct order of elements when media is icon', () => {
     testTeaserConfig.media.mediaVariant = 'icon';
     const wrapper = mount(<SprkCardTeaser teaserConfig={testTeaserConfig} />);
-    const hasCorrectOrder = wrapper.find('Media + Title + BodyText + CallToAction').length === 1;
+    const hasCorrectOrder =
+      wrapper.find('Media + Title + BodyText + CallToAction').length === 1;
     expect(hasCorrectOrder).toBe(true);
   });
 
   it('should render correct order of elements when media is img', () => {
     testTeaserConfig.media.mediaVariant = 'img';
     const wrapper = mount(<SprkCardTeaser teaserConfig={testTeaserConfig} />);
-    const hasCorrectOrder = wrapper.find(
-      'Media + div.sprk-c-Card__content Title + BodyText + CallToAction',
-    ).length === 1;
+    const hasCorrectOrder =
+      wrapper.find(
+        'Media + div.sprk-c-Card__content Title + BodyText + CallToAction',
+      ).length === 1;
     expect(hasCorrectOrder).toBe(true);
   });
 });

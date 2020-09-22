@@ -39,14 +39,14 @@ export const defaultStory = () => {
         <img
           class="sprk-o-Stack__item sprk-o-Stack__item--center-column"
           alt="Spark placeholder image"
-          src="https://spark-assets.netlify.com/spark-logo-updated.svg" />
+          src="https://spark-assets.netlify.app/spark-logo-updated.svg" />
       </a>
 
       <a class="sprk-o-Stack__item sprk-o-Stack__item--flex@s sprk-o-Stack" href="#nogo">
         <img
           class="sprk-o-Stack__item sprk-o-Stack__item--center-column"
           alt="Spark placeholder image"
-          src="https://spark-assets.netlify.com/spark-logo-updated.svg" />
+          src="https://spark-assets.netlify.app/spark-logo-updated.svg" />
       </a>
     </div>
 
@@ -54,20 +54,19 @@ export const defaultStory = () => {
       class="sprk-o-Stack__item"
       data-sprk-toggle="container"
     >
-      <a
-        class="sprk-b-TypeBodyThree sprk-b-Link sprk-b-Link--simple sprk-b-Link--has-icon"
+      <button
+        class="sprk-c-Toggle__trigger sprk-b-TypeBodyThree sprk-u-TextCrop--none"
         data-sprk-toggle="trigger"
-        href="#nogo"
       >
           <svg
-            class="sprk-c-Icon sprk-c-Icon--l sprk-c-Icon--toggle sprk-u-mrs"
+            class="sprk-c-Icon sprk-c-Icon--xl sprk-c-Icon--toggle sprk-u-mrs"
             data-sprk-toggle="icon"
             viewBox="0 0 64 64"
           >
-            <use xlink:href="#chevron-down-circle-two-color"></use>
+            <use xlink:href="#chevron-down-circle"></use>
           </svg>
           My Disclaimer
-      </a>
+      </button>
 
       <div data-sprk-toggle="content">
         <p class="sprk-b-TypeBodyFour sprk-u-pts sprk-u-pbs">

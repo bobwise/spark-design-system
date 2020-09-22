@@ -1,7 +1,8 @@
 import 'dom-slider';
+import 'focus-visible';
 const { slideToggle } = window.domSlider;
 import getElements from '../utilities/getElements';
-import { generateAriaControls } from '../utilities/generateAriaControls';
+import generateAriaControls from '../utilities/generateAriaControls';
 
 /**
  *  Toggle JS
@@ -54,8 +55,8 @@ const handleToggleClick = (toggleContent, toggleIcon, toggleIconUse, element) =>
     toggleIconType(
       toggleIcon,
       toggleIconUse,
-      'chevron-up-circle-two-color',
-      'chevron-up-circle-two-color',
+      'chevron-up-circle',
+      'chevron-up-circle',
     );
   }
 
@@ -78,7 +79,7 @@ const bindToggleUIEvents = (element) => {
   const toggleIcon = element.querySelector('[data-sprk-toggle="icon"]');
   const toggleIconUse = element.querySelector('[data-sprk-toggle="accordionIconUseElement"]');
 
-  generateAriaControls(toggleTrigger, toggleContent);
+  generateAriaControls(toggleTrigger, toggleContent, 'toggle');
 
   // Hide details content, initially shown for no-JS scenarios
   toggleContent.style.display = 'none';

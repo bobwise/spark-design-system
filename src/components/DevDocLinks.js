@@ -23,9 +23,9 @@ class DevDocLinks extends React.Component {
 
     return (
       <div className="sprk-o-Box sprk-o-Box--large sprk-u-BackgroundColor--gray sprk-u-Measure">
-        <h4 className="sprk-b-TypeDisplayFour sprk-u-mbm">
+        <h2 className="sprk-b-TypeDisplayFour sprk-u-mbm">
           Developer Documentation
-        </h4>
+        </h2>
 
         <p className="sprk-b-TypeBodyTwo sprk-u-mbl">
           Information on how to implement this component
@@ -47,7 +47,10 @@ class DevDocLinks extends React.Component {
                 HTML
                 <SprkIcon
                   iconName="chevron-right"
-                  additionalClasses="sprk-u-mls sprk-c-Icon--stroke-current-color"
+                  additionalClasses="
+                    sprk-u-mls
+                    sprk-c-Icon--filled-current-color
+                    sprk-c-Icon--stroke-current-color"
                 />
               </SprkLink>
             </SprkListItem>
@@ -63,7 +66,10 @@ class DevDocLinks extends React.Component {
                 React
                 <SprkIcon
                   iconName="chevron-right"
-                  additionalClasses="sprk-u-mls sprk-c-Icon--stroke-current-color" />
+                  additionalClasses="
+                    sprk-u-mls
+                    sprk-c-Icon--filled-current-color
+                    sprk-c-Icon--stroke-current-color" />
               </SprkLink>
             </SprkListItem>
           )}
@@ -78,7 +84,10 @@ class DevDocLinks extends React.Component {
                 Angular
                 <SprkIcon
                   iconName="chevron-right"
-                  additionalClasses="sprk-u-mls sprk-c-Icon--stroke-current-color" />
+                  additionalClasses="
+                    sprk-u-mls
+                    sprk-c-Icon--filled-current-color
+                    sprk-c-Icon--stroke-current-color" />
               </SprkLink>
             </SprkListItem>
           )}

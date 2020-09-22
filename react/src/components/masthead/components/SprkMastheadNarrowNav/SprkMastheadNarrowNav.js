@@ -9,26 +9,32 @@ const SprkMastheadNarrowNav = ({
   isOpen,
   links,
   selector,
+  narrowNavId,
   ...rest
 }) => (
-  <React.Fragment>
+  <>
     {isOpen && (
       <nav
         className="sprk-c-Masthead__narrow-nav"
         role="navigation"
         data-id={idString}
+        id={narrowNavId}
         {...rest}
       >
         {selector.items && <SprkMastheadSelector isFlush choices={selector} />}
-        <SprkMastheadAccordion linkSelectionFunction={linkSelectionFunction} links={links} />
+        <SprkMastheadAccordion
+          linkSelectionFunction={linkSelectionFunction}
+          links={links}
+        />
       </nav>
     )}
-  </React.Fragment>
+  </>
 );
 
 SprkMastheadNarrowNav.propTypes = {
   /**
-   * Assigned to the `data-id` attribute serving as a unique selector for automated tools.
+   * Assigned to the `data-id` attribute
+   * serving as a unique selector for automated tools.
    */
   idString: PropTypes.string,
   /**
@@ -36,7 +42,8 @@ SprkMastheadNarrowNav.propTypes = {
    */
   isOpen: PropTypes.bool,
   /**
-   * Expects a function to be executed when a user clicks a navigating link from the menu.
+   * Expects a function to be executed when a
+   * user clicks a navigating link from the menu.
    */
   linkSelectionFunction: PropTypes.func,
   /**
@@ -50,12 +57,21 @@ SprkMastheadNarrowNav.propTypes = {
       element: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.func,
-        PropTypes.elementType
+        PropTypes.elementType,
       ]),
       /**
        * Text of the link
        */
       text: PropTypes.string,
+      /**
+       * Determines if the active styles
+       * are applied to the link.
+       */
+      isActive: PropTypes.bool,
+      /**
+       * `id` of the link item
+       */
+      itemId: PropTypes.string,
       /**
        * Expects an array containing link objects.
        * Will be treated as a subnav to the link.
@@ -70,7 +86,7 @@ SprkMastheadNarrowNav.propTypes = {
           element: PropTypes.oneOfType([
             PropTypes.string,
             PropTypes.func,
-            PropTypes.elementType
+            PropTypes.elementType,
           ]),
         }),
       ),
@@ -100,13 +116,14 @@ SprkMastheadNarrowNav.propTypes = {
         element: PropTypes.oneOfType([
           PropTypes.string,
           PropTypes.func,
-          PropTypes.elementType
+          PropTypes.elementType,
         ]),
         /**
          * Additional text providing context for item.
          */
         information: PropTypes.string,
-        // TODO: get rid of this -- it does nothing but add a nonvalid "text" attribute on the item
+        // TODO: get rid of this -- it does nothing
+        /// but add a nonvalid "text" attribute on the item
         text: PropTypes.string,
         /**
          * The main headline of the item

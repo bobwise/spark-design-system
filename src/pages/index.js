@@ -21,13 +21,13 @@ const teaserDesigners = {
   cta: {
     text: 'Go To Designer Basics',
     ctaVariant: 'button',
-    buttonVariant: 'secondary',
+    buttonVariant: 'tertiary',
     href: '/principles/design-principles',
   },
   media: {
     href: '/principles/design-principles',
     mediaLinkElement: 'a',
-    imgAlt: 'An illustration of a computer with a paintbrush.',
+    imgAlt: 'An illustration of someone hands drawing on a tablet.',
     imgSrc: designersMedia,
     mediaVariant: 'img',
   },
@@ -46,7 +46,7 @@ const teaserDevelopers = {
   cta: {
     text: 'Go To Developer Basics',
     ctaVariant: 'button',
-    buttonVariant: 'secondary',
+    buttonVariant: 'tertiary',
     href: '/installing-spark',
   },
   media: {
@@ -72,7 +72,7 @@ const teaserComponents = {
   cta: {
     text: 'Go To Components',
     ctaVariant: 'button',
-    buttonVariant: 'secondary',
+    buttonVariant: 'tertiary',
     href: '/using-spark/components/button',
   },
   media: {
@@ -96,7 +96,7 @@ const teaserFoundations = {
   cta: {
     text: 'Go To Foundations',
     ctaVariant: 'button',
-    buttonVariant: 'secondary',
+    buttonVariant: 'tertiary',
     href: '/using-spark/foundations/color',
   },
   media: {
@@ -119,7 +119,7 @@ const teaserUtils = {
   cta: {
     text: 'Go To Utilities',
     ctaVariant: 'button',
-    buttonVariant: 'secondary',
+    buttonVariant: 'tertiary',
     href: '/using-spark/foundations/css-utilities',
   },
   media: {
@@ -141,13 +141,13 @@ const teaserNews = {
   cta: {
     text: 'Go To News',
     ctaVariant: 'button',
-    buttonVariant: 'secondary',
+    buttonVariant: 'tertiary',
     href: 'https://github.com/sparkdesignsystem/spark-design-system/releases',
   },
   media: {
     href: 'https://github.com/sparkdesignsystem/spark-design-system/releases',
     mediaLinkElement: 'a',
-    imgAlt: 'Decorative illustration of a clipboard.',
+    imgAlt: 'Decorative illustrations of mail and notifications.',
     imgSrc: newsMedia,
     mediaVariant: 'img',
   },
@@ -162,9 +162,7 @@ const IndexPage = () => (
   <Layout hasSideBar={false}>
     <SprkStack itemSpacing={spacingBtwSections}>
       <SprkStackItem>
-        <SprkStack
-          itemSpacing={spacingBtwHeadingAndContent}
-        >
+        <SprkStack itemSpacing={spacingBtwHeadingAndContent}>
           <SprkStackItem>
             <h1 className="sprk-b-TypeDisplayOne sprk-u-Color--red">
               Spark Design System
@@ -173,9 +171,9 @@ const IndexPage = () => (
 
           <SprkStackItem>
             <p className="sprk-b-TypeBodyTwo sprk-u-Measure">
-              Spark Design System is where we collect our best
-              solutions for how to design and build unified
-              digital experiences for the Rocket brands.
+              Spark Design System is where we collect our best solutions for how
+              to design and build unified digital experiences for the Rocket
+              brands.
             </p>
           </SprkStackItem>
         </SprkStack>

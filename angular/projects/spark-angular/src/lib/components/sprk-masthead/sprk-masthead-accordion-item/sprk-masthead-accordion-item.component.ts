@@ -9,32 +9,30 @@ import { toggleAnimations } from '../../sprk-toggle/sprk-toggle-animations';
       <div
         class="sprk-u-Position--relative sprk-o-Stack__item sprk-u-Width-100"
       >
-        <a
-          sprkLink
-          variant="unstyled"
+        <button
           [attr.aria-controls]="accordion_controls_id"
           class="sprk-c-MastheadAccordion__summary"
-          [analyticsString]="analyticsString"
-          [idString]="idString"
-          href="#"
+          [attr.data-analytics]="analyticsString"
+          [attr.data-id]="idString"
           (click)="toggleAccordion($event)"
+          [attr.aria-expanded]="isOpen"
         >
           <span [ngClass]="getHeadingClasses()">
             <sprk-icon
               [iconType]="leadingIcon"
-              additionalClasses="sprk-c-Icon--stroke-current-color sprk-c-Icon--l sprk-c-Icon--toggle sprk-u-mrs"
+              additionalClasses="sprk-c-Icon--filled-current-color sprk-c-Icon--xl sprk-c-Icon--toggle sprk-u-mrs"
               *ngIf="leadingIcon"
             ></sprk-icon>
             {{ title }}
           </span>
 
           <sprk-icon
-            additionalClasses="sprk-c-MastheadAccordion__icon sprk-c-Icon--stroke-current-color sprk-c-Icon--toggle {{
+            additionalClasses="sprk-c-MastheadAccordion__icon sprk-c-Icon--filled-current-color sprk-c-Icon--stroke-current-color sprk-c-Icon--toggle {{
               iconStateClass
             }}"
             [iconType]="currentIconType"
           ></sprk-icon>
-        </a>
+        </button>
       </div>
 
       <div [@toggleContent]="animState">

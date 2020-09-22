@@ -1,0 +1,162 @@
+////
+/// @group tooltip
+////
+
+.sprk-c-Tooltip__container {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.sprk-c-Tooltip__trigger {
+  background-color: $sprk-tooltip-trigger-background-color;
+  border: $sprk-tooltip-trigger-border;
+  padding: $sprk-tooltip-trigger-padding;
+  text-align: $sprk-tooltip-trigger-text-align;
+  display: flex;
+
+  /* Increase hoverable area of trigger */
+  &:hover::after {
+    position: absolute;
+    top: calc(-#{$sprk-tooltip-trigger-hover-offset});
+    left: calc(-#{$sprk-tooltip-trigger-hover-offset});
+    width: calc(3 * #{$sprk-tooltip-trigger-hover-offset});
+    height: calc(3 * #{$sprk-tooltip-trigger-hover-offset});
+    content: ' ';
+  }
+}
+
+.sprk-c-Tooltip {
+  background-color: $sprk-tooltip-background-color;
+  color: $sprk-tooltip-font-color;
+  padding: $sprk-tooltip-padding;
+  border-radius: $sprk-tooltip-border-radius;
+  font-size: $sprk-tooltip-font-size;
+  text-align: $sprk-tooltip-text-align;
+  font-weight: $sprk-tooltip-font-weight;
+  position: absolute;
+  max-width: $sprk-tooltip-max-width;
+  min-width: $sprk-tooltip-min-width;
+  width: $sprk-tooltip-max-width;
+
+  /* By default, IE will ignore this line and use the previous */
+  width: $sprk-tooltip-preferred-width;
+  z-index: $sprk-tooltip-z-index;
+  transition: $sprk-tooltip-transition;
+  opacity: 0;
+  visibility: hidden;
+
+  &::selection {
+    color: $sprk-white;
+  }
+
+  /* The caret */
+  &::before {
+    position: absolute;
+    width: $sprk-tooltip-caret-width;
+    height: $sprk-tooltip-caret-width;
+    background-color: $sprk-tooltip-caret-background-color;
+    -webkit-transform: rotateY(0deg) rotate(45deg);
+    -ms-transform: rotateY(0deg) rotate(45deg);
+    transform: rotateY(0deg) rotate(45deg);
+    content: ' ';
+  }
+
+  &.sprk-c-Tooltip--top-left {
+    top: auto;
+    left: auto;
+    bottom: calc(100% + #{$sprk-tooltip-caret-width} + #{$sprk-tooltip-animation-offset});
+    right: calc(50% - #{$sprk-tooltip-caret-width} - #{$sprk-tooltip-caret-offset} / 2);
+
+    &::before {
+      top: auto;
+      right: $sprk-tooltip-caret-offset;
+      bottom: calc(-#{$sprk-tooltip-caret-width} / 2);
+      left: auto;
+    }
+  }
+
+  &.sprk-c-Tooltip--top-right {
+    top: auto;
+    right: auto;
+    bottom: calc(100% + #{$sprk-tooltip-caret-width} + #{$sprk-tooltip-animation-offset});
+    left: calc(50% - #{$sprk-tooltip-caret-width} - #{$sprk-tooltip-caret-offset} / 2);
+
+    &::before {
+      top: auto;
+      right: auto;
+      bottom: calc(-#{$sprk-tooltip-caret-width} / 2);
+      left: $sprk-tooltip-caret-offset;
+    }
+  }
+
+  &.sprk-c-Tooltip--bottom-left {
+    top: calc(100% + #{$sprk-tooltip-caret-width} +  #{$sprk-tooltip-animation-offset});
+    right: calc(50% - #{$sprk-tooltip-caret-width} - #{$sprk-tooltip-caret-offset} / 2);
+    bottom: auto;
+    left: auto;
+
+    &::before {
+      top: calc(-#{$sprk-tooltip-caret-width} / 2);
+      right: $sprk-tooltip-caret-offset;
+      bottom: auto;
+      left: auto;
+    }
+  }
+
+  &.sprk-c-Tooltip--bottom-right {
+    top: calc(100% + #{$sprk-tooltip-caret-width} +  #{$sprk-tooltip-animation-offset});
+    right: auto;
+    bottom: auto;
+    left: calc(50% - #{$sprk-tooltip-caret-width} - #{$sprk-tooltip-caret-offset} / 2);
+
+    &::before {
+      top: calc(-#{$sprk-tooltip-caret-width} / 2);
+      right: auto;
+      bottom: auto;
+      left: $sprk-tooltip-caret-offset;
+    }
+  }
+}
+
+/// Applied when the tooltip is toggled.
+/// @name .sprk-c-Tooltip--toggled
+.sprk-c-Tooltip--toggled .sprk-c-Icon {
+  fill: $sprk-tooltip-toggled-icon-background-color;
+}
+
+.sprk-c-Tooltip__trigger:hover + .sprk-c-Tooltip,
+.sprk-c-Tooltip__trigger:focus + .sprk-c-Tooltip,
+.sprk-c-Tooltip__trigger.sprk-c-Tooltip--toggled + .sprk-c-Tooltip,
+.sprk-c-Tooltip:hover {
+  opacity: 1;
+  visibility: visible;
+
+  &.sprk-c-Tooltip--top-left {
+    top: auto;
+    left: auto;
+    bottom: calc(100% + #{$sprk-tooltip-caret-width});
+    right: calc(50% - #{$sprk-tooltip-caret-width} - #{$sprk-tooltip-caret-offset} / 2);
+  }
+
+  &.sprk-c-Tooltip--top-right {
+    top: auto;
+    right: auto;
+    bottom: calc(100% + #{$sprk-tooltip-caret-width});
+    left: calc(50% - #{$sprk-tooltip-caret-width} - #{$sprk-tooltip-caret-offset} / 2);
+  }
+
+  &.sprk-c-Tooltip--bottom-left {
+    top: calc(100% + #{$sprk-tooltip-caret-width});
+    right: calc(50% - #{$sprk-tooltip-caret-width} - #{$sprk-tooltip-caret-offset} / 2);
+    bottom: auto;
+    left: auto;
+  }
+
+  &.sprk-c-Tooltip--bottom-right {
+    top: calc(100% + #{$sprk-tooltip-caret-width});
+    right: auto;
+    bottom: auto;
+    left: calc(50% - #{$sprk-tooltip-caret-width} - #{$sprk-tooltip-caret-offset} / 2);
+  }
+}

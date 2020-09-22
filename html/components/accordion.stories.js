@@ -5,9 +5,7 @@ import { markdownDocumentationLinkBuilder } from '../../storybook-utilities/mark
 
 export default {
   title: 'Components/Accordion',
-  decorators: [
-    story => `<div class="sprk-o-Box">${story()}</div>`,
-  ],
+  decorators: [(story) => `<div class="sprk-o-Box">${story()}</div>`],
   parameters: {
     info: `
 ${markdownDocumentationLinkBuilder('accordion')}
@@ -20,6 +18,9 @@ automated tools. If you have multiple instances of the
 same variant of a component on the same page, make
 sure each instance has a unique \`data-id\` property
 ("accordion-primary-1", "accordion-primary-2", "accordion-secondary-1", etc).
+- If your instance only has one item,
+consider using
+the [Toggle Component](/docs/components-toggle--default-story) instead.
 `,
     docs: { iframeHeight: 420 },
   },
@@ -47,37 +48,25 @@ export const defaultStory = () => {
         <svg
           class="
             sprk-c-Icon sprk-c-Icon--toggle
-            sprk-c-Icon--l
             sprk-c-Accordion__icon
+            sprk-c-Icon--xl
           "
           data-sprk-toggle="icon"
           viewBox="0 0 64 64">
           <use
-            xlink:href="#chevron-up-circle-two-color"
+            xlink:href="#chevron-up-circle"
             data-sprk-toggle="accordionIconUseElement"></use>
         </svg>
     </button>
 
     <div data-sprk-toggle="content">
       <div class="sprk-c-Accordion__content sprk-o-Stack sprk-o-Stack--medium">
-        <p class="sprk-b-TypeBodyTwo sprk-o-Stack__item">
-          This is an example of multiple HTML
-          elements used for the content in an accordion item.
+        <p>
+          This is an example of accordion content.
+          This is an example of accordion content.
+          This is an example of accordion content.
+          This is an example of accordion content.
         </p>
-
-        <ul class="sprk-b-List sprk-b-List--indented sprk-o-Stack__item">
-          <li>
-            List Item One
-          </li>
-
-          <li>
-            List Item Two
-          </li>
-
-          <li>
-            List Item Three
-          </li>
-        </ul>
       </div>
     </div>
   </li>
@@ -98,13 +87,13 @@ export const defaultStory = () => {
           class="
             sprk-c-Icon
             sprk-c-Icon--toggle
-            sprk-c-Icon--l
             sprk-c-Accordion__icon
+            sprk-c-Icon--xl
           "
           data-sprk-toggle="icon"
           viewBox="0 0 64 64">
           <use
-            xlink:href="#chevron-up-circle-two-color"
+            xlink:href="#chevron-up-circle"
             data-sprk-toggle="accordionIconUseElement"></use>
         </svg>
     </button>
@@ -133,13 +122,15 @@ export const defaultStory = () => {
 
         <svg
           class="
-            sprk-c-Icon sprk-c-Icon--toggle
-            sprk-c-Icon--l sprk-c-Accordion__icon
+            sprk-c-Icon
+            sprk-c-Icon--toggle
+            sprk-c-Accordion__icon
+            sprk-c-Icon--xl
           "
           data-sprk-toggle="icon"
           viewBox="0 0 64 64">
           <use
-            xlink:href="#chevron-up-circle-two-color"
+            xlink:href="#chevron-up-circle"
             data-sprk-toggle="accordionIconUseElement"></use>
         </svg>
     </button>
