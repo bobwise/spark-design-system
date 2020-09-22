@@ -5,7 +5,9 @@
 .sprk-c-Tooltip__container {
   position: relative;
   display: inline-flex;
-  vertical-align: middle;
+  vertical-align: baseline;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .sprk-c-Tooltip__trigger {
