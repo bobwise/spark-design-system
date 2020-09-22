@@ -46,6 +46,10 @@
   opacity: 0;
   visibility: hidden;
 
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
+
   &::selection {
     color: $sprk-white;
   }
